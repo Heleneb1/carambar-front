@@ -1,0 +1,101 @@
+/* Conteneur principal */
+.add-joke-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-secondary);
+}
+.carambar-toast {
+  background: var(--secondary-color);
+  font-family: var(--font-secondary);
+  color: var(--text-light);
+  font-weight: "bold";
+  border-radius: "8px";
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Titre */
+.add-joke-container h1 {
+  text-align: center;
+  color: var(--text-third);
+  margin-bottom: 2rem;
+}
+.carambj {
+  transform: rotate(15deg);
+  margin: 0 auto 2rem auto;
+  height: 7rem;
+  display: flex;
+}
+/* Champs du formulaire */
+.add-joke-container form div {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.add-joke-container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs */
+.add-joke-container input[type="text"] {
+  padding: 0.75rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.add-joke-container input[type="text"]:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+
+/* Bouton */
+/* .add-joke-container button[type="submit"] {
+  background-color: var(--secondary-color);
+  width: 14rem;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  display: flex;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+} */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-joke-container button[type="submit"]:hover {
+  background-color: var(--text-light);
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .add-joke-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .add-joke-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .add-joke-container input[type="text"] {
+    font-size: 0.95rem;
+  }
+}

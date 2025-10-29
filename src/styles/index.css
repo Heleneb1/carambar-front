@@ -1,0 +1,35 @@
+@import "./variables.css";
+@import "./navbar.css";
+@import "./home.css";
+@import "./joke-card.css";
+@import "./add-joke.css";
+@import "./all-jokes.css";
+@import "./footer.css";
+@import "./not-found.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}

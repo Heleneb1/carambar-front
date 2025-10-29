@@ -1,0 +1,73 @@
+.all-jokes-container {
+  /* max-width: 30rem; */
+  height: 38rem;
+  display: flex;
+  /* margin: 3rem auto 0 auto; */
+  padding: 2rem;
+  /* background-color: var(--primary-color); */
+  /* border: 3px solid var(--secondary-color); */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-secondary);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.all-jokes-input {
+  background-color: var(--primary-color);
+  border: 3px solid var(--secondary-color);
+  padding: 2rem;
+}
+
+img.carambi {
+  transform: rotate(15deg);
+  margin: 0 auto 2rem auto;
+  height: 12rem;
+  display: block; /* Changé de flex à block */
+}
+
+/* Titre */
+.all-jokes-container h1 {
+  color: var(--text-third);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Select */
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--text-third);
+  border-radius: 2rem;
+  background-color: #fff;
+  color: var(--text-third);
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.select:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+
+/* Option */
+.select option {
+  padding: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .all-jokes-container {
+    margin: 1rem auto 0 auto; /* Aussi ici */
+    padding: 1rem;
+  }
+
+  .all-jokes-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .select {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,10 @@
+.notfound {
+  text-align: center;
+  padding: 2rem;
+  height: 38rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
