@@ -10,23 +10,29 @@ function AllJokes() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const errMess = "Erreur lors du chargement des blagues";
 
   useEffect(() => {
     JokeApi.getAllJokes()
       .then((res) => {
         setJokes(res.data);
       })
-      .catch(() => setError("Erreur lors du chargement des blagues"))
+      .catch(() => setError(errMess))
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div>Chargement...</div>;
-  if (error) return <div>{error}</div>;
-
+  if (loading) return <div className="load">Chargement...</div>;
+  if (error)
+    return (
+      <div className="err">
+        <p>{error}</p>
+        <img className="carambi" src={camramb} />
+      </div>
+    );
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const id = e.target.value;
     setSelectedJoke(id);
-    if (id) navigate(`/joke/${id}`); // redirection vers la blague
+    if (id) navigate(`/joke/${id}`);
   };
 
   return (

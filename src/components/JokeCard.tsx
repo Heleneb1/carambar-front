@@ -22,7 +22,7 @@ function JokeCard({ id }: { id: string }) {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <div>Chargement...</div>;
+  if (loading) return <div className="load">Chargement...</div>;
   if (notFound) return <Navigate to="/404" replace />;
   if (!joke) return <div>Aucune blague trouvée 😅</div>;
 

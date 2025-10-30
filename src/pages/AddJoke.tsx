@@ -10,6 +10,7 @@ function AddJoke() {
     answer: "",
     author: "",
   });
+
   const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ function AddJoke() {
       console.log("Form Data Submitted:", {
         question: formData.question,
         answer: formData.answer,
+        author: formData.author,
       });
       const jokeData = {
         question: formData.question,
@@ -28,7 +30,7 @@ function AddJoke() {
       const response = await JokeApi.addJoke(jokeData);
       const jokeId = response.data.id;
 
-      toast("Blague ajoutée !", {
+      toast("Blague ajoutée 🍬!", {
         icon: (
           <img src={carambarIcon} alt="Carambar" style={{ width: "4rem" }} />
         ),
@@ -38,7 +40,7 @@ function AddJoke() {
       });
     } catch (error) {
       console.error("Error while adding joke:", error);
-      alert("Erreur lors de la création");
+      toast.error("Erreur lors de la création");
     }
   };
   return (

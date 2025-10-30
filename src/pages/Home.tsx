@@ -5,8 +5,14 @@ import JokeApi from "../api/JokeApi";
 
 function Home() {
   const [joke, setJoke] = useState<Joke | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const loadErr = "Patiente un peu...";
 
   const handleClick = () => {
+    setLoading(true);
+    setError(null);
+
     JokeApi.displayRandomJoke()
       .then((res) => {
         setJoke(res.data);
@@ -16,9 +22,13 @@ function Home() {
           "Erreur lors du chargement de la blague aléatoire :",
           err
         );
-      });
+        setError(loadErr);
+      })
+      .finally(() => setLoading(false));
   };
 
+  if (loading) return <div className="load">{loadErr}</div>;
+  if (error) return <div className="load">{error}</div>;
   return (
     <div className="home-container">
       <img className="home-img" src={carambarImage} alt=" image Carambar" />
@@ -31,7 +41,7 @@ function Home() {
       </button>
       <div className="joke-modal-container">
         {joke && (
-          <div className="modal">
+          <div className="modal" role="dialog" aria-modal="true">
             <div className="joke-display">
               <p>{joke.question}</p>
               <p>

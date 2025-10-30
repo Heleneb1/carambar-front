@@ -16,6 +16,7 @@
   background-color: var(--primary-color);
   border: 3px solid var(--secondary-color);
   padding: 2rem;
+  animation: fadeInScale 0.4s ease-out;
 }
 
 img.carambi {
@@ -55,7 +56,18 @@ img.carambi {
 .select option {
   padding: 0.5rem;
 }
-
+.err {
+  margin: 2rem;
+  min-height: 35rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-style: italic;
+  flex-direction: column;
+  text-align: center;
+}
 /* Responsive */
 @media (max-width: 600px) {
   .all-jokes-container {
@@ -69,5 +81,8 @@ img.carambi {
 
   .select {
     font-size: 0.95rem;
+  }
+  .err {
+    min-height: 31rem;
   }
 }

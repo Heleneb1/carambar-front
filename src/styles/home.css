@@ -5,6 +5,7 @@
   margin-top: 2rem;
   padding: 1rem;
   position: relative;
+  animation: fadeInScale 0.4s ease-out;
 }
 
 .home-img {
@@ -25,7 +26,7 @@
 }
 .modal {
   position: absolute;
-  background: url(/src/assets/caramb.png?t=1761597696453) no-repeat center /
+  background: url(/src/assets/caramb2.png?t=1761597696453) no-repeat center /
     cover;
   background-size: 79%;
   top: 0rem;
@@ -63,11 +64,12 @@
   top: 4rem;
   right: -4rem;
   background: transparent;
-  border: 1px var(--secondary-color) solid;
+  border: 3px var(--secondary-color) solid;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
   color: var(--secondary-color);
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -97,7 +99,7 @@
 
 @media (max-width: 768px) {
   .home-img {
-    height: 16rem;
+    height: 14rem;
   }
 
   .home-intro {
@@ -106,19 +108,20 @@
   }
 
   .modal {
-    background-size: 71%;
-    height: 36rem;
+    width: 100%;
+    background-size: 100%;
+    height: 30rem;
   }
 
   .joke-display {
     padding-top: 1rem;
     padding-left: 1rem;
-    height: 6rem;
-    width: 16rem;
+    height: 5rem;
+    width: 15rem;
   }
   .modal-close {
     position: absolute;
     top: 4rem;
-    right: -3rem;
+    right: -2rem;
   }
 }

@@ -8,6 +8,7 @@
   min-height: 100svh;
   box-sizing: border-box;
   flex-direction: column;
+  animation: fadeInScale 2s ease-out;
 }
 
 .emoji-container {
@@ -33,6 +34,7 @@
   top: 14rem;
   right: 5rem;
   height: 15rem;
+  z-index: 10;
 }
 
 .emoji-3 {
@@ -191,7 +193,7 @@
     z-index: 1;
   }
   .emoji-2 {
-    top: -19rem;
+    top: -15rem;
     right: 5rem;
     height: 12rem;
   }

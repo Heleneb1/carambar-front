@@ -33,3 +33,43 @@ main {
 .footer {
   flex-shrink: 0;
 }
+.load {
+  margin: 2rem;
+  min-height: 35rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-style: italic;
+  flex-direction: column;
+  text-align: center;
+  animation: colorPulse 2s ease-in-out infinite;
+}
+@keyframes colorPulse {
+  0% {
+    color: var(--primary-color);
+  }
+  50% {
+    color: var(--secondary-color);
+  }
+  100% {
+    color: var(--primary-color);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .load {
+    min-height: 26rem;
+  }
+}
