@@ -29,9 +29,24 @@ function JokeCard({ id }: { id: string }) {
   return (
     <div className="joke-card-container">
       <div className="emoji-container">
-        <img src={lol} alt="emoji rire" className="emoji emoji-1" />
-        <img src={lol} alt="emoji rire" className="emoji emoji-2" />
-        <img src={lol} alt="emoji rire" className="emoji emoji-3" />
+        <img
+          src={lol}
+          loading="lazy"
+          alt="emoji rire"
+          className="emoji emoji-1"
+        />
+        <img
+          src={lol}
+          loading="lazy"
+          alt="emoji rire"
+          className="emoji emoji-2"
+        />
+        <img
+          src={lol}
+          loading="lazy"
+          alt="emoji rire"
+          className="emoji emoji-3"
+        />
       </div>
       <div className="joke-card">
         <h2>Carambar</h2>

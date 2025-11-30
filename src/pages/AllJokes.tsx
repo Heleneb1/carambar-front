@@ -26,7 +26,12 @@ function AllJokes() {
     return (
       <div className="err">
         <p>{error}</p>
-        <img className="carambi" src={camramb} />
+        <img
+          className="carambi"
+          src={camramb}
+          loading="lazy"
+          alt="image carambar"
+        />
       </div>
     );
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -38,8 +43,17 @@ function AllJokes() {
   return (
     <div className="all-jokes-container">
       <div className="all-jokes-input">
-        <img className="carambi" src={camramb} alt="Caramb" />
+        <div className="count">{jokes.length}</div>
+        <img
+          className="carambi"
+          src={camramb}
+          loading="lazy"
+          alt="image Carambar"
+        />
         <h1>Toutes les CaramBlagues</h1>
+        <div className="counter">
+          Actuellement, il y a <span>{jokes.length}</span> blagues
+        </div>
         <select className="select" value={selectedJoke} onChange={handleChange}>
           <option value="">Sélectionne une blague</option>
           {jokes.map((joke) => (

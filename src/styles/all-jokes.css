@@ -68,6 +68,22 @@ img.carambi {
   flex-direction: column;
   text-align: center;
 }
+/*Compteur*/
+.count {
+  position: relative;
+  top: 7rem;
+  z-index: 1;
+  color: var(--text-third);
+  font-weight: 700;
+}
+.counter {
+  color: var(--text-light);
+  font-style: italic;
+  padding: 0.5rem;
+}
+.counter span {
+  color: var(--secondary-color);
+}
 /* Responsive */
 @media (max-width: 600px) {
   .all-jokes-container {

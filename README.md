@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://raw.githubusercontent.com/Heleneb1/carambar-front/main/src/assets/carambar-joke.png" alt="Carambar Banner" />
+ <img src="https://raw.githubusercontent.com/Heleneb1/carambar-front/main/src/assets/carambar-joke.png"  alt="Carambar Banner" />
 </p>
 
 # 🍬 Carambar Front

@@ -31,7 +31,12 @@ function Home() {
   if (error) return <div className="load">{error}</div>;
   return (
     <div className="home-container">
-      <img className="home-img" src={carambarImage} alt=" image Carambar" />
+      <img
+        className="home-img"
+        src={carambarImage}
+        loading="lazy"
+        alt=" image Carambar"
+      />
       <article className="home-intro">
         <h1>Salut et bienvenue sur le site des CaramBlagues!</h1>
         <p>Découvre, ajoute et partage tes blagues 🤣 préférées.</p>

@@ -32,7 +32,12 @@ function AddJoke() {
 
       toast("Blague ajoutée 🍬!", {
         icon: (
-          <img src={carambarIcon} alt="Carambar" style={{ width: "4rem" }} />
+          <img
+            src={carambarIcon}
+            loading="lazy"
+            alt="Carambar"
+            style={{ width: "4rem" }}
+          />
         ),
         className: "carambar-toast",
 
@@ -47,7 +52,12 @@ function AddJoke() {
     <div className="add-joke-container">
       <h1>Ajouter une blague</h1>
 
-      <img className="carambj" src={carambarIcon} alt="Ajouter une blague" />
+      <img
+        className="carambj"
+        src={carambarIcon}
+        loading="lazy"
+        alt="Ajouter une blague"
+      />
       <form onSubmit={handleSubmit}>
         <div>
           <label>Question:</label>

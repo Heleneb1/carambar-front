@@ -14,7 +14,12 @@ function NavBar() {
           {/* TODO: Revoir Aff */}
           <h1 className="title">Carambar & Co</h1>
         </NavLink>
-        <img className="caramb-logo" src={candy} />
+        <img
+          className="caramb-logo"
+          src={candy}
+          loading="lazy"
+          alt="logo carambar"
+        />
 
         <div className="burger-icon" onClick={() => setIsOpen(!isOpen)}>
           <span></span>
