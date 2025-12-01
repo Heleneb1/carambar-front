@@ -83,6 +83,7 @@ img.carambi {
 }
 .counter span {
   color: var(--secondary-color);
+  font-weight: 900;
 }
 /* Responsive */
 @media (max-width: 600px) {
