@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import carambarImage from "../assets/realistic.png";
 import type { Joke } from "../models/Joke";
 import JokeApi from "../api/JokeApi";
@@ -7,11 +7,14 @@ function Home() {
   const [joke, setJoke] = useState<Joke | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [showSlowMessage, setShowSlowMessage] = useState(false);
   const loadErr = "Patiente un peu...";
+  const wait = "C'est un peu long aujourd'hui... ⏳, mais ça arrive !";
 
   const handleClick = () => {
     setLoading(true);
     setError(null);
+    setShowSlowMessage(false);
 
     JokeApi.displayRandomJoke()
       .then((res) => {
@@ -24,11 +27,32 @@ function Home() {
         );
         setError(loadErr);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        setShowSlowMessage(false);
+      });
   };
 
-  if (loading) return <div className="load">{loadErr}</div>;
+  // Afficher le message "c'est long" après 5 secondes de chargement
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    if (loading) {
+      timer = setTimeout(() => {
+        setShowSlowMessage(true);
+      }, 10000);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [loading]);
+
+  // Return précoce pour le loading - centré sur la page
+  if (loading)
+    return <div className="load">{showSlowMessage ? wait : loadErr}</div>;
+
+  // Return précoce pour l'erreur - centré sur la page
   if (error) return <div className="load">{error}</div>;
+
   return (
     <div className="home-container">
       <img
